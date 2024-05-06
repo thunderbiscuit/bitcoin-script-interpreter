@@ -1,2 +1,2 @@
-rootProject.name = "bitcoin-script"
+rootProject.name = "bitcoin-script-interpreter"
 include("lib")
