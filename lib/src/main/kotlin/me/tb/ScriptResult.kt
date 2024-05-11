@@ -1,4 +1,4 @@
-package org.example
+package me.tb
 
 sealed class ScriptResult {
     data object Success : ScriptResult()

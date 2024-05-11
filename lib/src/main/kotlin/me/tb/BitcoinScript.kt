@@ -1,11 +1,12 @@
-package org.example
+package me.tb
 
-import org.example.exceptions.OpCodeNotSupported
-import org.example.opcodes.executeOpFalse
-import org.example.opcodes.executeOpTrue
+import me.tb.exceptions.OpCodeNotSupported
+import me.tb.opcodes.executeOpFalse
+import me.tb.opcodes.executeOpTrue
 
-@OptIn(ExperimentalUnsignedTypes::class)
+@OptIn(ExperimentalUnsignedTypes::class, ExperimentalStdlibApi::class)
 class BitcoinScript(var script: UByteArray) {
+    val scriptReader = ScriptReader(script)
     val stack = mutableListOf<UByteArray>()
 
     fun validate(): ScriptResult {
@@ -23,7 +24,6 @@ class BitcoinScript(var script: UByteArray) {
         }
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     private fun interpretNextOpcode() {
         println("Script: ${script.size}")
         println("Stack size: ${stack.size}")

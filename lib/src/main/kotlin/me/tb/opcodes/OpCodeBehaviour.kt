@@ -1,6 +1,6 @@
-package org.example.opcodes
+package me.tb.opcodes
 
-import org.example.BitcoinScript
+import me.tb.BitcoinScript
 
 @OptIn(ExperimentalUnsignedTypes::class)
 fun BitcoinScript.executeOpTrue() {

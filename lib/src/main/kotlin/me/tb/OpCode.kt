@@ -1,4 +1,4 @@
-package org.example
+package me.tb
 
 enum class OpCode(val value: UByte) {
     OP_FALSE(0x00u),
