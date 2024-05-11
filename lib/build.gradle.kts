@@ -29,6 +29,15 @@ testing {
     }
 }
 
+kotlin {
+    compilerOptions {
+        freeCompilerArgs = listOf(
+            "-opt-in=kotlin.ExperimentalUnsignedTypes",
+            "-opt-in=kotlin.ExperimentalStdlibApi",
+        )
+    }
+}
+
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {

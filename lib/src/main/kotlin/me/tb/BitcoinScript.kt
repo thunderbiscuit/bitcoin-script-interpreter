@@ -5,7 +5,6 @@ import me.tb.opcodes.executeOpFalse
 import me.tb.opcodes.executeOpTrue
 import me.tb.OpCode.*
 
-@OptIn(ExperimentalUnsignedTypes::class, ExperimentalStdlibApi::class)
 class BitcoinScript(var script: UByteArray) {
     val scriptReader = ScriptReader(script)
     val stack = mutableListOf<UByteArray>()

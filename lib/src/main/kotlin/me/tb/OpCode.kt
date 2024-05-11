@@ -83,5 +83,4 @@ enum class OpCode(val value: UByte) : ScriptElement {
     OTHER(0xffu);
 }
 
-@OptIn(ExperimentalUnsignedTypes::class)
 data class ScriptData(val data: UByteArray) : ScriptElement

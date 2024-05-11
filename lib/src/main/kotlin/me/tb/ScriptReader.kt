@@ -5,7 +5,6 @@
 
 package me.tb
 
-@OptIn(ExperimentalUnsignedTypes::class)
 class ScriptReader(private var rawScript: UByteArray) {
     fun get(): UByteArray {
         return rawScript

@@ -1,6 +1,5 @@
 package me.tb
 
-@OptIn(ExperimentalUnsignedTypes::class, ExperimentalStdlibApi::class)
 fun List<ScriptElement>.toAsmDisplay(): String {
     return this.joinToString(" ") {
         when (it) {
