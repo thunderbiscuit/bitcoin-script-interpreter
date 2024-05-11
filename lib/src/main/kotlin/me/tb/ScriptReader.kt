@@ -20,6 +20,10 @@ class ScriptReader(private var rawScript: UByteArray) {
         return data
     }
 
+    fun getNextByte(): UByte {
+        return getNext(1).first()
+    }
+
     fun isEmpty(): Boolean {
         return rawScript.isEmpty()
     }
