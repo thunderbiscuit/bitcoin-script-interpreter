@@ -79,8 +79,13 @@ public enum class OpCode(public val value: UByte) : ScriptElement {
     OP_PUSHBYTES_73(0x49u),
     OP_PUSHBYTES_74(0x4au),
     OP_PUSHBYTES_75(0x4bu),
+    OP_PUSHDATA1(0x4cu),
+    OP_PUSHDATA2(0x4du),
+    OP_PUSHDATA4(0x4eu),
     OP_TRUE(0x51u),
     OTHER(0xffu);
 }
 
-data class ScriptData(val data: UByteArray) : ScriptElement
+public data class ScriptData(val data: UByteArray) : ScriptElement
+
+public data class PushDataNumber(val number: UInt) : ScriptElement

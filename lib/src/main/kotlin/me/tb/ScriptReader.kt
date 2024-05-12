@@ -10,17 +10,20 @@ public class ScriptReader(private var rawScript: UByteArray) {
         return rawScript
     }
 
-    fun getNext(length: Int): UByteArray {
-        if (length > rawScript.size) {
+    public fun getNext(length: UInt): UByteArray {
+        if (length > rawScript.size.toUInt()) {
             throw IllegalArgumentException("Requested length $length exceeds remaining transaction data ${rawScript.size}")
         }
-        val data = rawScript.copyOfRange(0, length)
-        rawScript = rawScript.copyOfRange(length, rawScript.size)
+        if (length > Int.MAX_VALUE.toUInt()) {
+            throw IllegalArgumentException("Known bug of this library: requested length $length exceeds maximum Int value")
+        }
+        val data = rawScript.copyOfRange(0, length.toInt())
+        rawScript = rawScript.copyOfRange(length.toInt(), rawScript.size)
         return data
     }
 
-    fun getNextByte(): UByte {
-        return getNext(1).first()
+    public fun getNextByte(): UByte {
+        return getNext(1u).first()
     }
 
     public fun isEmpty(): Boolean {
