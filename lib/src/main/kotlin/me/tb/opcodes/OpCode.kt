@@ -1,8 +1,8 @@
-package me.tb
+package me.tb.opcodes
 
-sealed interface ScriptElement
+public sealed interface ScriptElement
 
-enum class OpCode(val value: UByte) : ScriptElement {
+public enum class OpCode(public val value: UByte) : ScriptElement {
     OP_FALSE(0x00u),
     OP_PUSHBYTES_1(0x01u),
     OP_PUSHBYTES_2(0x02u),

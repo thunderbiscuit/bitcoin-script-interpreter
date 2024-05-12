@@ -1,6 +1,7 @@
 package me.tb
 
 import me.tb.exceptions.OpCodeNotSupported
+import me.tb.opcodes.OpCode
 import me.tb.opcodes.executeOpFalse
 import me.tb.opcodes.executeOpTrue
 import me.tb.OpCode.*
@@ -9,7 +10,7 @@ class BitcoinScript(var script: UByteArray) {
     val scriptReader = ScriptReader(script)
     val stack = mutableListOf<UByteArray>()
 
-    fun parseAsm(): List<ScriptElement> {
+    public fun parseAsm(): List<ScriptElement> {
         val asm = mutableListOf<ScriptElement>()
 
         while (!scriptReader.isEmpty()) {
@@ -399,7 +400,7 @@ class BitcoinScript(var script: UByteArray) {
         return asm
     }
 
-    fun validate(): ScriptResult {
+    public fun validate(): ScriptResult {
         while (script.isNotEmpty()) {
             interpretNextOpcode()
         }

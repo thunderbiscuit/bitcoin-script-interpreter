@@ -1,6 +1,6 @@
 package me.tb
 
-sealed class ScriptResult {
-    data object Success : ScriptResult()
-    data class Failure(val error: String) : ScriptResult()
+public sealed class ScriptResult {
+    public data object Success : ScriptResult()
+    public data class Failure(val error: String) : ScriptResult()
 }

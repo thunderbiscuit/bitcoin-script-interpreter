@@ -9,6 +9,6 @@ fun List<ScriptElement>.toAsmDisplay(): String {
     }
 }
 
-fun UByte.toOpCode(): OpCode {
+public fun UByte.toOpCode(): OpCode {
     return OpCode.entries.firstOrNull { it.value == this } ?: OpCode.OTHER
 }

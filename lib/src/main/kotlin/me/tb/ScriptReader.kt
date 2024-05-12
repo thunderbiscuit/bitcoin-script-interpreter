@@ -5,8 +5,8 @@
 
 package me.tb
 
-class ScriptReader(private var rawScript: UByteArray) {
-    fun get(): UByteArray {
+public class ScriptReader(private var rawScript: UByteArray) {
+    public fun get(): UByteArray {
         return rawScript
     }
 
@@ -23,7 +23,7 @@ class ScriptReader(private var rawScript: UByteArray) {
         return getNext(1).first()
     }
 
-    fun isEmpty(): Boolean {
+    public fun isEmpty(): Boolean {
         return rawScript.isEmpty()
     }
 }
