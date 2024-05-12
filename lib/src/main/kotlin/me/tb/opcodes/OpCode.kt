@@ -1,6 +1,9 @@
-package me.tb.opcodes
+/*
+ * Copyright 2022-2024 thunderbiscuit and contributors.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the ./LICENSE.txt file.
+ */
 
-public sealed interface ScriptElement
+package me.tb.opcodes
 
 public enum class OpCode(public val value: UByte) : ScriptElement {
     OP_FALSE(0x00u),
@@ -85,7 +88,3 @@ public enum class OpCode(public val value: UByte) : ScriptElement {
     OP_TRUE(0x51u),
     OTHER(0xffu);
 }
-
-public data class ScriptData(val data: UByteArray) : ScriptElement
-
-public data class PushDataNumber(val number: UInt) : ScriptElement
