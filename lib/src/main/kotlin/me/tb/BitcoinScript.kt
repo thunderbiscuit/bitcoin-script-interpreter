@@ -631,4 +631,9 @@ public class BitcoinScript(public var script: UByteArray) {
             else     -> throw OpCodeNotSupported(opCode.value)
         }
     }
+
+    public operator fun plus(other: BitcoinScript): BitcoinScript {
+        val newScript = script + other.script
+        return BitcoinScript(newScript)
+    }
 }
