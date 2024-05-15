@@ -6,3 +6,4 @@
 package me.tb.exceptions
 
 public class OpCodeNotSupported(byte: UByte) : Exception("Opcode not supported: $byte")
+public class DataPushException(message: String) : Exception(message)

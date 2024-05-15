@@ -23,7 +23,7 @@ public fun List<ScriptElement>.toAsmDisplay(): String {
 }
 
 public fun UByte.toOpCode(): OpCode {
-    return OpCode.entries.firstOrNull { it.value == this } ?: OpCode.OTHER
+    return OpCode.entries.firstOrNull { it.value == this } ?: throw IllegalArgumentException("Invalid OpCode")
 }
 
 public fun UByteArray.littleEndianToUInt(): UInt {
